@@ -1,13 +1,13 @@
 package com.rs.springframework.sfgdi;
 
 import com.rs.springframework.sfgdi.Controllers.*;
+import com.rs.springframework.sfgdi.config.SfgConfiguration;
 import com.rs.springframework.sfgdi.datasource.FakeDataSource;
 import com.rs.springframework.sfgdi.services.PrototypeBean;
 import com.rs.springframework.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 
 //@ComponentScan(basePackages = {"com.rs.springframework.sfgdi","com.rs.springframework.pets"})
 @SpringBootApplication
@@ -53,11 +53,18 @@ public class SfgDiApplication {
 		PrototypeBean prototypeBean2=ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
 
-		System.out.println("----------DataSource Property ---------");
+		System.out.println("----------FakeDataSource Property ---------");
 		FakeDataSource fakeDataSource= ctx.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getJdbcurl());
+
+		System.out.println("----------Config Prop Bean ---------");
+		SfgConfiguration sfgConfiguration = ctx.getBean(SfgConfiguration.class);
+		System.out.println(sfgConfiguration.getUsername());
+		System.out.println(sfgConfiguration.getPassword());
+		System.out.println(sfgConfiguration.getJdbcurl());
+
 	}
 
 }
