@@ -1,0 +1,5 @@
+com:
+  rs:
+    username: DEV_YMLUserName
+    password: DEV_YMLPassword
+    jdbcurl: DEV_YMLURL

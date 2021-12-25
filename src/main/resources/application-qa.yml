@@ -1,0 +1,5 @@
+com:
+  rs:
+    username: QA_YMLUserName
+    password: QA_YMLPassword
+    jdbcurl: QA_YMLURL
